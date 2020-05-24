@@ -6,16 +6,13 @@
 
 	<input id="tweet" value="">
 	<script>
-		function LoadTweet() {
-			var url_string = window.location.href;
-			var url = new URL(url_string);
-			var text = url.searchParams.get("text");
-		    document.getElementById("tweet").innerHTML = text;
-		}
-	  </script>
+		var url_string = window.location.href;
+		var url = new URL(url_string);
+		var text = url.searchParams.get("text");
+	</script>
 
 </head>
-<body onload="LoadTweet()">
+<body>
 	<form id="mturk_form" method="post" name="mturk_form">
 		<input type="hidden" id="assignmentId" value="" name="assignmentId"/>
 
