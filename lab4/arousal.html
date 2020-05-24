@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta content="text/html;charset=UTF-8" http-equiv="Content-Type" />
+	<script src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js' type='text/javascript'></script>
+</head>
+<body>
+	<form id="mturk_form" method="post" name="mturk_form">
+		<input type="hidden" id="assignmentId" value="" name="assignmentId"/>
+
+		<h2>Choose the emotion that most matches the text.</h2>
+
+		<fieldset style="font-size: 150%">
+			<p><input name="darknessVal" type="radio" value="Excited" /> Excited</p>
+			<p><input name="darknessVal" type="radio" value="Wide-awake" /> Wide-awake</p>
+			<p><label><input name="darknessVal" type="radio" value="Neutral" /> Neutral</label></p>
+			<p><label><input name="darknessVal" type="radio" value="Dull" />  Dull</label></p>
+			<p><label><input name="darknessVal" type="radio" value="Calm" />  Calm</label></p>
+		</fieldset>
+		<br>
+		<input type="submit">
+	</form>
+	<script language='Javascript'>turkSetAssignmentID();</script>
+</body>
+</html>
