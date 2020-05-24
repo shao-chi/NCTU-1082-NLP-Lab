@@ -3,11 +3,23 @@
 <head>
 	<meta content="text/html;charset=UTF-8" http-equiv="Content-Type" />
 	<script src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js' type='text/javascript'></script>
+
+	<input id="tweet" value="">
+	<script>
+		function LoadTweet() {
+			var url_string = window.location.href;
+			var url = new URL(url_string);
+			var text = url.searchParams.get("text");
+		    document.getElementById("tweet").innerHTML = text;
+		}
+	  </script>
+
 </head>
-<body>
+<body onload="LoadTweet()">
 	<form id="mturk_form" method="post" name="mturk_form">
 		<input type="hidden" id="assignmentId" value="" name="assignmentId"/>
 
+		<h1>"<span id="tweet"></span></h1>
 		<h2>Choose the emotion that most matches the text.</h2>
 
 		<fieldset style="font-size: 150%">
