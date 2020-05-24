@@ -9,14 +9,18 @@
             request.open("GET", url, false);   
             request.send(null);  
 
-            var csvData = new Array();
+            var idx = new Array();
+            var text = new Array();
             var jsonObject = request.responseText.split(/\r?\n|\r/);
-            for (var i = 0; i < jsonObject.length; i++) {
-                csvData.push(jsonObject[i].split(','));
+            for (var i = 1; i < jsonObject.length; i++) {
+                var tmp = jsonObject[i].split(',')
+                idx.push(tmp[0]);
+                text.push(tmp[1])
             }
             // Retrived data from csv file content
-            console.log(csvData[0][0]);
-            document.write(csvData[0][0])
+            // console.log(csvData[0][0]);
+            document.write(idx)
+            document.write(text)
         </script>
         000
       </body></html>
