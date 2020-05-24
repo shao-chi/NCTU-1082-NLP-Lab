@@ -11,7 +11,7 @@
             request.open("GET", url, false);   
             request.send(null);  
 
-            var jsonObject = request.responseText // .split(/\r?\n|\r/);
+            var jsonObject = request.responseText.split(/\r?\n|\r/);
             var sss = $.csv.toArrays(jsonObject)
             document.write(jsonObject)
             // for (var i = 1; i < jsonObject.length; i++) {
