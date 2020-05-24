@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html><head>
+        <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
+        <script src="jquery-csv.js"></script>
+      </head>
+      <body>
+        <script type="text/javascript">
+        // sent a GET request to retrieve the CSV file contents
+        $.get( "https://gist.githubusercontent.com/bshmueli/c99fc0abf56460e644bd610bf3024e83/raw/720285d133c85d94e0aa3fe3edcc199f6d99e3f7/lab4-data.csv", function(CSVdata) {
+           // CSVdata is populated with the file contents
+           // ready to be converted into an Array
+            data = $.csv.toArray(CSVdata);
+            console.log(data)
+        });
+        document.write(data)
+        </script>
+        000
+      </body></html>
