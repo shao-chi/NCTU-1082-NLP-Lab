@@ -12,6 +12,7 @@
             var idx = new Array();
             var text = new Array();
             var jsonObject = request.responseText.split(/\r?\n|\r/);
+            document.write(jsonObject)
             for (var i = 1; i < jsonObject.length; i++) {
                 var tmp = jsonObject[i].split(',')
                 idx.push(tmp[0]);
