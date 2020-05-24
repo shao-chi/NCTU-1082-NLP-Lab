@@ -5,24 +5,21 @@
       <body>
         <script src="https://raw.githubusercontent.com/typeiii/jquery-csv/master/src/jquery.csv.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
         <script type="text/javascript">
             var url = "https://gist.githubusercontent.com/bshmueli/c99fc0abf56460e644bd610bf3024e83/raw/720285d133c85d94e0aa3fe3edcc199f6d99e3f7/lab4-data.csv";
-            var request = new XMLHttpRequest();  
-            request.open("GET", url, false);   
-            request.send(null);  
+            // var request = new XMLHttpRequest();  
+            // request.open("GET", url, false);   
+            // request.send(null);  
 
-            var jsonObject = request.responseText.split(/\r?\n|\r/);
-            var sss = $.csv.toArrays(jsonObject)
-            document.write(jsonObject)
-            // for (var i = 1; i < jsonObject.length; i++) {
-            //     var tmp = jsonObject[i].split(',')
-            //     idx.push(tmp[0]);
-            //     text.push(tmp[1])
-            // }
-            // Retrived data from csv file content
-            // console.log(csvData[0][0]);
-            // document.write(idx)
-            // document.write(text)
+            $.ajax({
+                type: "GET",
+                url: "https://gist.githubusercontent.com/bshmueli/c99fc0abf56460e644bd610bf3024e83/raw/720285d133c85d94e0aa3fe3edcc199f6d99e3f7/lab4-data.csv",
+                success: function (data) {
+                    $('body').append(Papa.parse(data).data);
+                }
+            });
+            document.write(data)
         </script>
         000
       </body></html>
