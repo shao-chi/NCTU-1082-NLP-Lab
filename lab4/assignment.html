@@ -6,9 +6,21 @@
 
 	<input id="tweet" value="">
 	<script>
-		var url_string = window.location.href;
-		var url = new URL(url_string);
-		var text = url.searchParams.get("text");
+		var getUrlParameter = function getUrlParameter(sParam) {
+			var sPageURL = window.location.search.substring(1),
+				sURLVariables = sPageURL.split('&'),
+				sParameterName,
+				i;
+
+			for (i = 0; i < sURLVariables.length; i++) {
+				sParameterName = sURLVariables[i].split('=');
+
+				if (sParameterName[0] === sParam) {
+					return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+				}
+			}
+		};
+		var tweet = getUrlParameter("text");
 	</script>
 
 </head>
@@ -18,7 +30,7 @@
 
 		<h1>
 			<script type="text/javascript">
-				document.write(text)
+				document.write(tweet)
 			</script>
 		</h1>
 		<h2>Choose the emotion that most matches the text.</h2>
